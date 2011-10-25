@@ -1,0 +1,7 @@
+export(orlm, goric, goric_penalty, orlmcontrol)
+exportClasses("orlm")
+
+S3method(orlm, formula)
+S3method(print, orlm)
+S3method(summary, orlm)
+
