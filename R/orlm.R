@@ -61,7 +61,7 @@ function(formula, data, constr, rhs, nec, control=orlmcontrol()){
     tBeta <- matrix(tBeta, ncol=ncol(y), dimnames=list(colnames(x), colnames(y)))
   }
   
-  out <- list(call=cl, X=x, y=y, unccoefficients=tBeta, coefficients=orBeta, sigma=Sigma, orSigma=orSigma, logLik=loglik, constr=constr, rhs=rhs, nec=nec, Niter=i, iact=sqp$iact)
+  out <- list(call=cl, X=x, y=y, unccoefficients=tBeta, coefficients=orBeta, fitted=x %*% orBeta, residuals=y - x %*% orBeta, sigma=Sigma, orSigma=orSigma, logLik=loglik, constr=constr, rhs=rhs, nec=nec, Niter=i, iact=sqp$iact)
   class(out) <- "orlm"
   return(out)
 }

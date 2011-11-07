@@ -9,13 +9,15 @@ the GORIC values, and the GORIC weights for a set of hypotheses (orlm objects),
 where the penalty is based on \eqn{iter} iterations.
 }
 \usage{
-goric(object, ..., iter = 1e+05)
-goric_penalty(object, iter = 1e+05)
+goric(object, ..., iter = 1e+05, mc.cores=1)
+goric_penalty(object, iter = 1e+05, mc.cores=1)
 }
 \arguments{
   \item{object}{an object of class orlm}
   \item{\dots}{further objects of class orlm}
   \item{iter}{number of iterations to calculate GORIC penalty terms}
+  \item{mc.cores}{number of cores using a socket cluster implemented in package
+  \code{parallel}}
 }
 \details{
 The hypothesis with the lowest GORIC value is the preferred one.
@@ -43,11 +45,12 @@ Order-Restricted Information Criterion for Multivariate Normal Linear Models.
 Daniel Gerhard and Rebecca M. Kuiper
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{\code{\link{orlm}}}
 \examples{
-## Example from Kuiper, R.M. and Hoijtink, H. (Unpublished). A Fortran 90 program for the generalization of the order restricted information criterion.
+## Example from Kuiper, R.M. and Hoijtink, H. (Unpublished).
+# A Fortran 90 program for the generalization of the
+# order restricted information criterion.
 
 # constraint definition
 cmat <- cbind(diag(3), 0) + cbind(0, -diag(3))
@@ -55,23 +58,24 @@ constr <- kronecker(diag(3), cmat)
 constr
 
 # no effect model
-fm0 <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene, constr=constr, rhs=rep(0, nrow(constr)), nec=nrow(constr))
+fm0 <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene,
+            constr=constr, rhs=rep(0, nrow(constr)), nec=nrow(constr))
 fm0
 
 # order constrained model (increasing serum levels with increasing doses)
-fm1 <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene, constr=constr, rhs=rep(0, nrow(constr)), nec=0)
+fm1 <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene,
+            constr=constr, rhs=rep(0, nrow(constr)), nec=0)
 summary(fm1)
 
 # unconstrained model
-fmunc <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene, constr=matrix(0, nrow=1, ncol=12), rhs=0, nec=0)
+fmunc <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene,
+              constr=matrix(0, nrow=1, ncol=12), rhs=0, nec=0)
 fmunc
 
 # calculate GORIC
 # (only small number of iterations to decrease computation time, default: iter=100000)
 goric(fm0, fm1, fmunc, iter=1000)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
+
 \keyword{models}
-%\keyword{Probability Distributions and Random Numbers}
 \keyword{optimize}

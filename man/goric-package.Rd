@@ -13,8 +13,8 @@ for a set of hypotheses in multivariate regression models. The GORIC is a modifi
 \tabular{ll}{
 Package: \tab goric\cr
 Type: \tab Package\cr
-Version: \tab 0.0-1\cr
-Date: \tab 2011-10-25\cr
+Version: \tab 0.0-2\cr
+Date: \tab 2011-11-7\cr
 License: \tab GPL (>=2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -69,7 +69,7 @@ Maintainer: Rebecca M. Kuiper <R.M.Kuiper@uu.nl>
 }
 \references{
 Akaike, H. (1973). Information theory and an extension of the maximum likelihood principle. \emph{In Proc. 2nd Int. Symp. Information Theory}, Ed. B. N. Petrov 
-and F. Cs\'aki, pp. 267/226-81. Budapest: Akademiai kiado.
+and F. Csaki, pp. 267/226-81. Budapest: Akademiai kiado.
 
 Anraku K. (1999). An Information Criterion for Parameters under a Simple Order
 Restriction. \emph{Biometrika}, \bold{86}, 141--152.

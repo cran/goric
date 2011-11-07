@@ -1,5 +1,5 @@
 goric_penalty <-
-function(object, iter=100000){
+function(object, iter=100000, mc.cores=1){
   require(quadprog)
   require(mvtnorm)
   if (!inherits(object, "orlm")) stop("object needs to be of class orlm")
@@ -15,11 +15,24 @@ function(object, iter=100000){
     Dmat <- 2*invW
     Amat <- t(object$constr)
     bvec <- object$rhs
-    nact <- apply(Z, 1, function(z){
-      dvec <- 2*(z %*% invW)
-      QP <- solve.QP(Dmat,dvec,Amat,bvec=bvec, meq=object$nec)
-      length(QP$iact)
-    })
+    nec <- object$nec
+    if (mc.cores == 1){
+      nact <- apply(Z, 1, function(z){
+        dvec <- 2*(z %*% invW)
+        QP <- solve.QP(Dmat,dvec,Amat,bvec=bvec, meq=nec)
+        length(QP$iact)
+      })
+    } else {
+      require(parallel)
+      cl <- makeCluster(mc.cores)
+      clusterExport(cl, c("solve.QP"))
+      nact <- parRapply(cl, Z, function(z, invW,Dmat,Amat,bvec,nec){
+        dvec <- 2*(z %*% invW)
+        QP <- solve.QP(Dmat,dvec,Amat,bvec=bvec, meq=nec)
+        length(QP$iact)
+      }, invW=invW, Dmat=Dmat, Amat=Amat, bvec=bvec, nec=nec)
+      stopCluster(cl)
+    }
     dimsol <- ncol(W) - nact
     LP <- sapply(1:(ncol(W)+1), function(x) sum(x == (dimsol+1)))/iter
     penalty <- 1 + sum((1:ncol(W))*LP[-1])

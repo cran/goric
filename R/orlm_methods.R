@@ -30,3 +30,20 @@ print.orlm <- function(x, digits = max(3, getOption("digits") - 3), ...){
   invisible(x)
 }
 
+
+model.matrix.orlm <- function(object, ...){
+  object$X
+}
+
+
+predict.orlm <- function(object, newdata=NULL, ...){
+  if (is.null(newdata)){
+    X <- object$X
+  } else {
+    form <- object$call$formula
+    form[[2]] <- NULL
+    X <- model.matrix(as.formula(form), data=newdata)
+  }
+  X %*% object$coefficients
+}
+

@@ -59,22 +59,27 @@ Order-Restricted Information Criterion for Multivariate Normal Linear Models.
 \seealso{\code{\link{solve.QP}}, \code{\link{goric}}}
 
 \examples{
-## Example from Kuiper, R.M. and Hoijtink, H. (Unpublished). A Fortran 90 program for the generalization of the order restricted information criterion.
+## Example from Kuiper, R.M. and Hoijtink, H. (Unpublished).
+# A Fortran 90 program for the generalization of the
+# order restricted information criterion.
 
 # constraint definition
 cmat <- cbind(diag(3), 0) + cbind(0, -diag(3))
 constr <- kronecker(diag(3), cmat)
 
 # no effect model
-fm0 <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene, constr=constr, rhs=rep(0, nrow(constr)), nec=nrow(constr))
+fm0 <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene,
+            constr=constr, rhs=rep(0, nrow(constr)), nec=nrow(constr))
 fm0
 
 # order constrained model (increasing serum levels with increasing doses)
-fm1 <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene, constr=constr, rhs=rep(0, nrow(constr)), nec=nrow(constr))
+fm1 <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene,
+            constr=constr, rhs=rep(0, nrow(constr)), nec=nrow(constr))
 summary(fm1)
 
 # unconstrained model
-fmunc <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene, constr=matrix(0, nrow=1, ncol=12), rhs=0, nec=0)
+fmunc <- orlm(cbind(SDH, SGOT, SGPT) ~ dose-1, data=vinylidene,
+              constr=matrix(0, nrow=1, ncol=12), rhs=0, nec=0)
 fmunc
 }
 
