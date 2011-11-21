@@ -1,13 +1,13 @@
-ce7b429e82aae048f350b5ac227658ee *DESCRIPTION
+0b5ad801ce4290e54c7ad3375bc979bb *DESCRIPTION
 1116064e2df8060da5b1b0dc2ead109b *NAMESPACE
-eb3a92754c54cf8839f404dccfb33f0e *R/goric.R
+c1233877c59c7fe9e9b8c54518f9ad68 *R/goric.R
 2034e738616749e86748dbfc508b7001 *R/goric_penalty.R
 3eb5d498a51b9b658df6b8c6ded959bb *R/orlm.R
 075cc8b0bd1c2e6de7c72bd97d0a188e *R/orlm_methods.R
 b2a48fee6fe85ce7a96dcbc8b6375e65 *R/orlmcontrol.R
 3a520f06d8cb7d6aa73f935fd4505b6e *data/vinylidene.rda
-637057bba07fbef6c9a140e359c89ebd *man/goric-package.Rd
-83de9404e80043a1e57668164e6f7504 *man/goric.Rd
+f997acc073f3c05a1e4bad8811f2bf96 *man/goric-package.Rd
+ea2a76a5384184d79eac47bc9b754667 *man/goric.Rd
 bce11691b452599945620db125145f49 *man/orlm.Rd
 88ffbc5b265f8748a71ef8b0bb278af8 *man/orlmcontrol.Rd
 215b3ddf26c244afd786a3314d5e31fe *man/summarize_orlm.Rd

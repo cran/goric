@@ -5,8 +5,8 @@
 \title{Calculate GORIC}
 \description{
 It calculates the order-restricted log likelihood, the penalty of the GORIC,
-the GORIC values, and the GORIC weights for a set of hypotheses (orlm objects),
-where the penalty is based on \eqn{iter} iterations.
+the GORIC values, differences to the minimum GORIC value, and the GORIC
+weights for a set of hypotheses (orlm objects), where the penalty is based on \eqn{iter} iterations.
 }
 \usage{
 goric(object, ..., iter = 1e+05, mc.cores=1)

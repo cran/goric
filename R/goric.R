@@ -11,8 +11,9 @@ function(object, ..., iter=100000, mc.cores=1){
   names(orlmlist) <- as.character(Call[-1L])[isorlm]
   loglik <- sapply(orlmlist, function(x) x$logLik)
   penalty <- sapply(orlmlist, function(x) goric_penalty(x, iter=iter, mc.cores=mc.cores))
-  goric <- 2*(loglik - penalty)
-  goric_weights <- exp(goric/2) / sum(exp(goric/2))
-  data.frame(loglik, penalty, goric=-1*goric, goric_weights=round(goric_weights,3))
+  goric <- -2*(loglik - penalty)
+  delta <- goric - min(goric)
+  goric_weights <- exp(-delta/2) / sum(exp(-delta/2))
+  data.frame(loglik, penalty, goric=goric, delta=round(delta,3), goric_weights=round(goric_weights,3))
 }
 
