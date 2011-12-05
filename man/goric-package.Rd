@@ -13,8 +13,8 @@ for a set of hypotheses in multivariate regression models. The GORIC is a modifi
 \tabular{ll}{
 Package: \tab goric\cr
 Type: \tab Package\cr
-Version: \tab 0.0-3\cr
-Date: \tab 2011-11-21\cr
+Version: \tab 0.0-4\cr
+Date: \tab 2011-12-05\cr
 License: \tab GPL (>=2)\cr
 LazyLoad: \tab yes\cr
 }

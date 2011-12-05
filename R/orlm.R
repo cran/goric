@@ -20,8 +20,17 @@ function(formula, data, constr, rhs, nec, control=orlmcontrol()){
   if (!is.matrix(constr)) stop("constr needs to be a matrix.")
   if (ncol(y)*ncol(x) != ncol(constr)) stop(paste("constr has not correct dimensions.\nNumber of columns (",ncol(constr),") should equal the number of responses times the number of parameters: ",ncol(y), "*", ncol(x), "=",ncol(y)*ncol(x), sep=""))
   if (length(rhs) != nrow(constr)) stop(paste("rhs has a different number of elements than there are numbers of rows in constr (",length(rhs), " != ", nrow(constr), ")", sep=""))
+  if (is.numeric(nec) & length(nec) != 1) stop("nec needs to be single a numeric value or a logical vector with the same length as the number of constraints.")
+  if (is.logical(nec) & length(nec) != length(rhs)) stop("nec needs to be single a numeric value or a logical vector with the same length as the number of constraints.")
+  if (is.logical(nec)){
+    ord <- order(nec, decreasing=TRUE)
+    constr <- constr[ord,,drop=FALSE]
+    rhs <- rhs[ord]
+    nec <- sum(nec)
+  }
   if (nec < 0) stop("nec needs to be positive")
-  if (nec > length(rhs)) stop(paste("nec is larger than the number of constraints. (",nec," > ",length(rhs),")", sep=""))
+  if (nec > length(rhs)) stop(paste("nec is larger than the number of constraints. (",nec," > ",length(rhs),")", sep=""))    
+
   ########################
   ## unconstrained linear model
   unc <- lm(y ~ x-1)

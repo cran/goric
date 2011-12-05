@@ -13,7 +13,7 @@ goric(object, ..., iter = 1e+05, mc.cores=1)
 goric_penalty(object, iter = 1e+05, mc.cores=1)
 }
 \arguments{
-  \item{object}{an object of class orlm}
+  \item{object}{an object of class orlm, or a list of orlm objects}
   \item{\dots}{further objects of class orlm}
   \item{iter}{number of iterations to calculate GORIC penalty terms}
   \item{mc.cores}{number of cores using a socket cluster implemented in package
