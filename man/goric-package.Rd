@@ -13,8 +13,8 @@ for a set of hypotheses in multivariate regression models. The GORIC is a modifi
 \tabular{ll}{
 Package: \tab goric\cr
 Type: \tab Package\cr
-Version: \tab 0.0-4\cr
-Date: \tab 2011-12-05\cr
+Version: \tab 0.0-6\cr
+Date: \tab 2012-07-18\cr
 License: \tab GPL (>=2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -65,7 +65,7 @@ Kuiper, Hoijtink, and Silvapulle (unpublished).
 \author{
 Daniel Gerhard and Rebecca M. Kuiper
 
-Maintainer: Rebecca M. Kuiper <R.M.Kuiper@uu.nl>
+Maintainer: Daniel Gerhard <gerhard@biostat.uni-hannover.de>
 }
 \references{
 Akaike, H. (1973). Information theory and an extension of the maximum likelihood principle. \emph{In Proc. 2nd Int. Symp. Information Theory}, Ed. B. N. Petrov 

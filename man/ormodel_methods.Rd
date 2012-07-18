@@ -1,6 +1,9 @@
-\name{summarize_orlm}
+\name{ormodel_methods}
 \alias{summary.orlm}
 \alias{print.orlm}
+\alias{summary.orgls}
+\alias{print.orgls}
+
 \title{Summarize orlm Objects}
 \description{\code{summary} method for class "orlm"}
 \usage{

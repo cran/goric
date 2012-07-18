@@ -1,5 +1,7 @@
 \name{goric}
 \alias{goric}
+\alias{goric.orlm}
+\alias{goric.orgls}
 \alias{goric_penalty}
 
 \title{Calculate GORIC}
@@ -9,12 +11,14 @@ the GORIC values, differences to the minimum GORIC value, and the GORIC
 weights for a set of hypotheses (orlm objects), where the penalty is based on \eqn{iter} iterations.
 }
 \usage{
-goric(object, ..., iter = 1e+05, mc.cores=1)
+goric(object, ..., iter = 100000, mc.cores=1)
+\method{goric}{orlm}(object, ..., iter = 100000, mc.cores=1)
+\method{goric}{orgls}(object, ..., iter = 100000, mc.cores=1)
 goric_penalty(object, iter = 1e+05, mc.cores=1)
 }
 \arguments{
   \item{object}{an object of class orlm, or a list of orlm objects}
-  \item{\dots}{further objects of class orlm}
+  \item{\dots}{further objects of class orlm OR orgls}
   \item{iter}{number of iterations to calculate GORIC penalty terms}
   \item{mc.cores}{number of cores using a socket cluster implemented in package
   \code{parallel}}
@@ -46,7 +50,7 @@ Daniel Gerhard and Rebecca M. Kuiper
 }
 
 
-\seealso{\code{\link{orlm}}}
+\seealso{\code{\link{orlm}}, \code{\link{orgls}}}
 \examples{
 ## Example from Kuiper, R.M. and Hoijtink, H. (Unpublished).
 # A Fortran 90 program for the generalization of the

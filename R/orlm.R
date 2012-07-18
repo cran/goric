@@ -17,6 +17,7 @@ function(formula, data, constr, rhs, nec, control=orlmcontrol()){
   y <- cbind(model.response(mf, "numeric"))
   x <- model.matrix(mt, mf, contrasts)
 
+  if (is.numeric(constr)) constr <- rbind(constr)
   if (!is.matrix(constr)) stop("constr needs to be a matrix.")
   if (ncol(y)*ncol(x) != ncol(constr)) stop(paste("constr has not correct dimensions.\nNumber of columns (",ncol(constr),") should equal the number of responses times the number of parameters: ",ncol(y), "*", ncol(x), "=",ncol(y)*ncol(x), sep=""))
   if (length(rhs) != nrow(constr)) stop(paste("rhs has a different number of elements than there are numbers of rows in constr (",length(rhs), " != ", nrow(constr), ")", sep=""))
@@ -69,7 +70,7 @@ function(formula, data, constr, rhs, nec, control=orlmcontrol()){
     orBeta <- matrix(orBeta, ncol=ncol(y), dimnames=list(colnames(x), colnames(y)))
     tBeta <- matrix(tBeta, ncol=ncol(y), dimnames=list(colnames(x), colnames(y)))
   }
-  
+  names(orBeta) <- colnames(x)
   out <- list(call=cl, X=x, y=y, unccoefficients=tBeta, coefficients=orBeta, fitted=x %*% orBeta, residuals=y - x %*% orBeta, sigma=Sigma, orSigma=orSigma, logLik=loglik, constr=constr, rhs=rhs, nec=nec, Niter=i, iact=sqp$iact)
   class(out) <- "orlm"
   return(out)

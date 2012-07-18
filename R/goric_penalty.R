@@ -2,7 +2,7 @@ goric_penalty <-
 function(object, iter=100000, mc.cores=1){
   require(quadprog)
   require(mvtnorm)
-  if (!inherits(object, "orlm")) stop("object needs to be of class orlm")
+  if (!(inherits(object, "orlm") | inherits(object, "orgls"))) stop("object needs to be of class orlm or orgls")
   if (all(object$constr == 0) & object$nec == 0){
     penalty <- length(object$coefficients) + 1
   } else {
@@ -20,7 +20,7 @@ function(object, iter=100000, mc.cores=1){
       nact <- apply(Z, 1, function(z){
         dvec <- 2*(z %*% invW)
         QP <- solve.QP(Dmat,dvec,Amat,bvec=bvec, meq=nec)
-        length(QP$iact)
+        if (QP$iact[1] == 0) return(0) else return(length(QP$iact))
       })
     } else {
       require(parallel)
@@ -29,7 +29,7 @@ function(object, iter=100000, mc.cores=1){
       nact <- parRapply(cl, Z, function(z, invW,Dmat,Amat,bvec,nec){
         dvec <- 2*(z %*% invW)
         QP <- solve.QP(Dmat,dvec,Amat,bvec=bvec, meq=nec)
-        length(QP$iact)
+        if (QP$iact[1] == 0) return(0) else return(length(QP$iact))
       }, invW=invW, Dmat=Dmat, Amat=Amat, bvec=bvec, nec=nec)
       stopCluster(cl)
     }
