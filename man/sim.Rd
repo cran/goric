@@ -43,4 +43,4 @@ b <- sim(fm, n.sims=1000)$coef
 pairs(t(b), cex=0.3)
 }
 
-\keyword{models}
+\keyword{methods}

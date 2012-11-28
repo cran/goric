@@ -44,3 +44,8 @@ function(object, ..., iter=100000, mc.cores=1){
   data.frame(loglik, penalty, vcdf=ep, goric=goric, goric_weights=round(goric_weights,3))
 }
 
+goric.list <- function(object, ..., iter=100000, mc.cores=1){
+  if (all(sapply(object, class) == "orlm")) out <- goric.orlm(object, iter=iter, mc.cores=mc.cores)
+  if (all(sapply(object, class) == "orgls")) out <- goric.orgls(object, iter=iter, mc.cores=mc.cores)
+  return(out)
+}

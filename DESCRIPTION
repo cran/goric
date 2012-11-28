@@ -1,8 +1,8 @@
 Package: goric
 Type: Package
 Title: Generalized Order-Restricted Information Criterion
-Version: 0.0-6
-Date: 2012-07-18
+Version: 0.0-7
+Date: 2012-11-28
 Author: Daniel Gerhard and Rebecca M. Kuiper
 Maintainer: Daniel Gerhard <gerhard@biostat.uni-hannover.de>
 Description: Generalized Order-Restricted Information Criterion (GORIC)
@@ -12,6 +12,6 @@ Suggests: parallel
 License: GPL (>= 2)
 LazyData: yes
 LazyLoad: yes
-Packaged: 2012-07-18 14:13:38 UTC; daniel
+Packaged: 2012-11-28 14:08:16 UTC; daniel
 Repository: CRAN
-Date/Publication: 2012-07-18 14:19:39
+Date/Publication: 2012-11-28 15:35:48

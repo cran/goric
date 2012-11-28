@@ -13,8 +13,8 @@ for a set of hypotheses in multivariate regression models. The GORIC is a modifi
 \tabular{ll}{
 Package: \tab goric\cr
 Type: \tab Package\cr
-Version: \tab 0.0-6\cr
-Date: \tab 2012-07-18\cr
+Version: \tab 0.0-7\cr
+Date: \tab 2012-11-28\cr
 License: \tab GPL (>=2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -37,7 +37,7 @@ and the remaing ones the inequality contraints
 \item When \eqn{rhs} is not zero, \eqn{Constr} should be of full rank 
 (after discarding redundant restrictions).
 }
-More information can be obtained from Kuiper, Hoijtink, and Silvapulle (2011) and Kuiper, Hoijtink, and Silvapulle (unpublished).
+More information can be obtained from Kuiper, Hoijtink, and Silvapulle (2011), Kuiper, Hoijtink, and Silvapulle (2012), and Kuiper and Hoijtink (unpublished).
 
 
 \code{orlm} renders the order-restricted maximum likelihood estimates
@@ -78,11 +78,12 @@ Kuiper R.M., Hoijtink H., Silvapulle M.J. (2011). An Akaike-type Information
 Criterion for Model Selection Under Inequality Constraints. \emph{Biometrika}, 
 \bold{98}, 495--501.
 
-Kuiper R.M., Hoijtink H., Silvapulle M.J. (unpublished). Generalization of the 
-Order-Restricted Information Criterion for Multivariate Normal Linear Models.
+Kuiper R.M., Hoijtink H., Silvapulle M.J. (2012). Generalization of the 
+Order-Restricted Information Criterion for Multivariate Normal Linear Models. \emph{Journal of Statistical Planning and Inference}, 142, 2454-2463. doi:10.1016/j.jspi.2012.03.007.
+
+Kuiper R.M. and Hoijtink H. (submitted to Journal of Statictical Software).
+A Fortran 90 Program for the Generalization of the Order-Restricted Information Criterion.
 }
 
 \keyword{package}
-\keyword{regression}
-\keyword{models}
 

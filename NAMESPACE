@@ -1,9 +1,10 @@
-export(orlm, orgls, goric, goric_penalty, orlmcontrol, sim)
+export(orlm, orgls, goric, goric_penalty, orlmcontrol, sim, orlmSet, orglsSet, constrMat, constrSet)
 exportClasses("orlm","orgls","goric")
 
 S3method(orlm, formula)
 S3method(orgls, formula)
 S3method(goric, orlm)
+S3method(goric, list)
 S3method(print, orlm)
 S3method(summary, orlm)
 S3method(model.matrix, orlm)

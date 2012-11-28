@@ -21,4 +21,4 @@
 
 \author{Daniel Gerhard and Rebecca M. Kuiper}
 
-\keyword{htest}
+\keyword{methods}

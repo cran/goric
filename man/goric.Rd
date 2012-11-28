@@ -2,6 +2,7 @@
 \alias{goric}
 \alias{goric.orlm}
 \alias{goric.orgls}
+\alias{goric.list}
 \alias{goric_penalty}
 
 \title{Calculate GORIC}
@@ -14,6 +15,7 @@ weights for a set of hypotheses (orlm objects), where the penalty is based on \e
 goric(object, ..., iter = 100000, mc.cores=1)
 \method{goric}{orlm}(object, ..., iter = 100000, mc.cores=1)
 \method{goric}{orgls}(object, ..., iter = 100000, mc.cores=1)
+\method{goric}{list}(object, ..., iter = 100000, mc.cores=1)
 goric_penalty(object, iter = 1e+05, mc.cores=1)
 }
 \arguments{
@@ -42,8 +44,9 @@ Kuiper R.M., Hoijtink H., Silvapulle M.J. (2011). An Akaike-type Information
 Criterion for Model Selection Under Inequality Constraints. \emph{Biometrika}, 
 \bold{98}, 495--501.
 
-Kuiper R.M., Hoijtink H., Silvapulle M.J. (unpublished). Generalization of the 
-Order-Restricted Information Criterion for Multivariate Normal Linear Models.
+Kuiper R.M., Hoijtink H., Silvapulle M.J. (2012). Generalization of the Order-Restricted Information Criterion for Multivariate Normal Linear Models. \emph{Journal of Statistical Planning and Inference}, \bold{142}, 2454-2463. doi:10.1016/j.jspi.2012.03.007.
+
+Kuiper R.M. and Hoijtink H. (submitted). A Fortran 90 Program for the Generalization of the Order-Restricted Information Criterion. Journal of Statictical Software.
 }
 \author{
 Daniel Gerhard and Rebecca M. Kuiper
@@ -82,4 +85,3 @@ goric(fm0, fm1, fmunc, iter=1000)
 }
 
 \keyword{models}
-\keyword{optimize}
