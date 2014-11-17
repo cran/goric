@@ -2,8 +2,10 @@
 \alias{goric}
 \alias{goric.orlm}
 \alias{goric.orgls}
+\alias{goric.orglm}
 \alias{goric.list}
 \alias{goric_penalty}
+\alias{orglm_penalty}
 
 \title{Calculate GORIC}
 \description{
@@ -12,16 +14,24 @@ the GORIC values, differences to the minimum GORIC value, and the GORIC
 weights for a set of hypotheses (orlm objects), where the penalty is based on \eqn{iter} iterations.
 }
 \usage{
-goric(object, ..., iter = 100000, mc.cores=1)
-\method{goric}{orlm}(object, ..., iter = 100000, mc.cores=1)
-\method{goric}{orgls}(object, ..., iter = 100000, mc.cores=1)
-\method{goric}{list}(object, ..., iter = 100000, mc.cores=1)
-goric_penalty(object, iter = 1e+05, mc.cores=1)
+goric(object, ..., iter = 100000, type="GORIC", dispersion=1, mc.cores=1)
+\method{goric}{orlm}(object, ..., iter = 100000, type="GORIC", mc.cores=1)
+\method{goric}{orgls}(object, ..., iter = 100000, type="GORIC", mc.cores=1)
+\method{goric}{list}(object, ..., iter = 100000, type="GORIC", dispersion=1, mc.cores=1)
+\method{goric}{orglm}(object, ..., iter = 100000, type="GORIC", dispersion=1, mc.cores=1)
+goric_penalty(object, iter = 1e+05, type="GORIC", mc.cores=1)
+orglm_penalty(object, iter = 100000, type="GORIC", mc.cores=1)
 }
 \arguments{
-  \item{object}{an object of class orlm, or a list of orlm objects}
-  \item{\dots}{further objects of class orlm OR orgls}
+  \item{object}{an object of class orlm, orgls, orglm, or a list of these objects}
+  \item{\dots}{further objects of class orlm, orgls, OR orglm}
   \item{iter}{number of iterations to calculate GORIC penalty terms}
+  \item{type}{if \code{"GORIC"} (default), the penalty term for the
+    generalized order restriction is computed; with \code{"GORICCa"} or
+    \code{"GORICCb"} small sample corrections for the penalty term are
+    applied (only available for orlm models)}
+  \item{dispersion}{dispersion parameter to scale GORIC analogue to QAIC
+  in generalized linear models}
   \item{mc.cores}{number of cores using a socket cluster implemented in package
   \code{parallel}}
 }
