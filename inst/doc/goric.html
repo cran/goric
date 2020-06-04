@@ -306,6 +306,8 @@ knitr::kable(coefficients(m))
                       data=vinylidene,
                       constr=matrix(0, nrow=1, ncol=12), 
                       rhs=0, nec=0)
+#&gt; Warning in model.matrix.default(mt, mf, contrasts): non-list contrasts argument
+#&gt; ignored
 knitr::kable(coefficients(unconstrained))
 </code></pre>
 
@@ -350,8 +352,8 @@ knitr::kable(coefficients(unconstrained))
 <pre><code class="r">cmat &lt;- cbind(-diag(3), 0) + cbind(0, diag(3))
 constr &lt;- kronecker(diag(3), cmat)
 knitr::kable(constr)
-#&gt; Warning in kable_markdown(x = structure(c(&quot;-1&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, :
-#&gt; The table should have a header (column names)
+#&gt; Warning in kable_markdown(x = structure(c(&quot;-1&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0&quot;, : The
+#&gt; table should have a header (column names)
 </code></pre>
 
 <table><thead>
@@ -505,6 +507,8 @@ knitr::kable(constr)
                  constr=constr, 
                  rhs=rep(0, nrow(constr)), 
                  nec=0)
+#&gt; Warning in model.matrix.default(mt, mf, contrasts): non-list contrasts argument
+#&gt; ignored
 knitr::kable(round(coefficients(monotone), 2))
 </code></pre>
 
@@ -553,6 +557,8 @@ knitr::kable(round(coefficients(monotone), 2))
                  constr=constr, 
                  rhs=rep(0, nrow(constr)), 
                  nec=nrow(constr))
+#&gt; Warning in model.matrix.default(mt, mf, contrasts): non-list contrasts argument
+#&gt; ignored
 knitr::kable(round(coefficients(noeffect), 2))
 </code></pre>
 
@@ -585,7 +591,7 @@ knitr::kable(round(coefficients(noeffect), 2))
 <tr>
 <td align="left">dosed4</td>
 <td align="right">24.12</td>
-<td align="right">105.37</td>
+<td align="right">105.38</td>
 <td align="right">59.7</td>
 </tr>
 </tbody></table>
@@ -618,9 +624,9 @@ knitr::kable(ic)
 <tr>
 <td align="left">monotone</td>
 <td align="right">-399.5223</td>
-<td align="right">7.47714</td>
-<td align="right">813.9990</td>
-<td align="right">0.006</td>
+<td align="right">7.48383</td>
+<td align="right">814.0123</td>
+<td align="right">0.005</td>
 </tr>
 <tr>
 <td align="left">noeffect</td>
