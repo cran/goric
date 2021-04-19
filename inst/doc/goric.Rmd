@@ -101,6 +101,6 @@ We obtain a very high weight for the unconstrained model, demonstrating that we 
 
 * Kuiper R.M., Hoijtink H., Silvapulle M.J. (2011). An Akaike-type Information Criterion for Model Selection Under Inequality Constraints. *Biometrika*, **98**, 495-501.
 
-* Kuiper R.M., Hoijtink H., Silvapulle M.J. (2012). Generalization of the Order-Restricted Information Criterion for Multivariate Normal Linear Models. *Journal of Statistical Planning and Inference*, **142**, 2454-2463. doi:10.1016/j.jspi.2012.03.007.
+* Kuiper R.M., Hoijtink H., Silvapulle M.J. (2012). Generalization of the Order-Restricted Information Criterion for Multivariate Normal Linear Models. *Journal of Statistical Planning and Inference*, **142**, 2454-2463. 
 
-* Kuiper R.M., Gerhard D., Hothorn L.A. (2014). Identification of the Minimum Effective Dose for Normally Distributed Endpoints Using a Model Selection Approach. *Statistics in Biopharmaceutical Research*, **6**(1), 55-66. doi:10.1080/19466315.2013.847384
+* Kuiper R.M., Gerhard D., Hothorn L.A. (2014). Identification of the Minimum Effective Dose for Normally Distributed Endpoints Using a Model Selection Approach. *Statistics in Biopharmaceutical Research*, **6**(1), 55-66.

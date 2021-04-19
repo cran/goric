@@ -1,4 +1,4 @@
-d32c6054f43f20eb0531903e1482cd0d *DESCRIPTION
+7784a8401b35dce5a957485dc98e3ad0 *DESCRIPTION
 2760d79632a0e043416224168273e667 *NAMESPACE
 76ab8b55cdc1dcffe640911e6388d9a0 *R/constrMat.R
 564a039a6df14bb8c03a2f8f8d4052e2 *R/constrSet.R
@@ -14,11 +14,11 @@ de69508c9961a574a3e5a16c9cd4e244 *R/orlm.R
 075cc8b0bd1c2e6de7c72bd97d0a188e *R/orlm_methods.R
 b1b0ac7cbdca666463dce01c9ea95bc3 *R/orlmcontrol.R
 bcba408af2cd1ff07b08837624931d11 *R/sim.R
-fcc9a5e3531bcf3dc881e387fd092ca0 *build/vignette.rds
+35ee83e8023c00d98486cea43a9d278b *build/vignette.rds
 3a520f06d8cb7d6aa73f935fd4505b6e *data/vinylidene.rda
 bc71ceb76ded3aee37a3511208e9745a *inst/doc/goric.R
-876002fc7df64de698a7f6f536028764 *inst/doc/goric.Rmd
-df6ff02ec82ef2f8232a96487c3803f5 *inst/doc/goric.html
+ef257bf641169c307c7d60ac87dc840d *inst/doc/goric.Rmd
+f08e5386a8d517f0c5be42575cbe62ee *inst/doc/goric.html
 07ea9f15930bf5f888252afc167ae697 *man/constrMat.Rd
 d40d35483ff5c6a6fad5eb2a7767bb90 *man/constrSet.Rd
 3a697adfde99b490a50bd800f151ae5b *man/goric.Rd
@@ -31,4 +31,4 @@ c4f8d08ac7bdf2d707b83bbbef1b855c *man/goric_penalty.Rd
 26fd1ec61396f9e22a573b08e90918d3 *man/orlmcontrol.Rd
 00eb586935f508dbee37dcc7b60ca83c *man/sim.Rd
 9a4db2ee392f5dadb5caa9dd5cc782fc *man/vinylidene.Rd
-876002fc7df64de698a7f6f536028764 *vignettes/goric.Rmd
+ef257bf641169c307c7d60ac87dc840d *vignettes/goric.Rmd
