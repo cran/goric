@@ -22,9 +22,9 @@ orgls(formula, data, constr, rhs, nec, weights = NULL, correlation = NULL,
 
 \item{nec}{number of equality constraints; a numeric value treating the first nec constr rows as equality constraints, or a logical vector with \code{TRUE} for equality- and \code{FALSE} for inequality constraints.}
 
-\item{weights}{a \code{\link{varClasses}} object; more details are provided on the help pages in R package \code{nlme}}
+\item{weights}{a \code{\link[nlme]{varClasses}} object; more details are provided on the help pages in R package \code{nlme}}
 
-\item{correlation}{a \code{\link{corClasses}} object; more details are provided on the help pages in R package \code{nlme}}
+\item{correlation}{a \code{\link[nlme]{corClasses}} object; more details are provided on the help pages in R package \code{nlme}}
 
 \item{control}{a list of control arguments; see \code{\link{orlmcontrol}} for details.}
 }
@@ -86,6 +86,6 @@ m3 <- orgls(response ~ grp-1, data = dat,
 }
 }
 \seealso{
-\code{\link{solve.QP}}, \code{\link{goric}}
+\code{\link[quadprog]{solve.QP}}, \code{\link{goric}}
 }
 \keyword{models}

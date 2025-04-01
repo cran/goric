@@ -119,6 +119,6 @@ summary(fm1)
 }
 }
 \seealso{
-\code{\link{solve.QP}}, \code{\link{goric}}
+\code{\link[quadprog]{solve.QP}}, \code{\link{goric}}
 }
 \keyword{models}

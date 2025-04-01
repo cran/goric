@@ -27,45 +27,31 @@ document.addEventListener('DOMContentLoaded', function(e) {
   }
 });
 </script>
-<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
-// v0.0.1
-// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
-
-document.addEventListener('DOMContentLoaded', function() {
-  const codeList = document.getElementsByClassName("sourceCode");
-  for (var i = 0; i < codeList.length; i++) {
-    var linkList = codeList[i].getElementsByTagName('a');
-    for (var j = 0; j < linkList.length; j++) {
-      if (linkList[j].innerHTML === "") {
-        linkList[j].setAttribute('aria-hidden', 'true');
-      }
-    }
-  }
-});
-</script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
 
 
 <style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -77,55 +63,54 @@ pre > code.sourceCode { white-space: pre-wrap; }
 pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {   }
+{ }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -134,13 +119,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -350,11 +342,21 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <div id="selecting-multivariate-linear-models-with-shape-constraints" class="section level2">
 <h2>Selecting multivariate linear models with shape constraints</h2>
-<p>An experiment was conducted to find out whether vinylidene fluoride gives rise to liver damage. The dataset is available on page 10 of Silvapulle and Sen (2005) and in a report prepared by Litton Bionetics Inc in 1984. Since increased levels of serum enzyme are inherent in liver damage, the focus is on whether enzyme levels are affected by vinylidene fluoride. The variable of interest is the serum enzyme level. Three types of enzymes are inspected, namely SDH, SGOT, and SGPT. To study whether vinylidene fluoride has an influence on the three serum enzymes, four dosages of this substance are examined. In each of these four treatment groups, ten male Fischer-344 rats received the substance.</p>
+<p>An experiment was conducted to find out whether vinylidene fluoride
+gives rise to liver damage. The dataset is available on page 10 of
+Silvapulle and Sen (2005) and in a report prepared by Litton Bionetics
+Inc in 1984. Since increased levels of serum enzyme are inherent in
+liver damage, the focus is on whether enzyme levels are affected by
+vinylidene fluoride. The variable of interest is the serum enzyme level.
+Three types of enzymes are inspected, namely SDH, SGOT, and SGPT. To
+study whether vinylidene fluoride has an influence on the three serum
+enzymes, four dosages of this substance are examined. In each of these
+four treatment groups, ten male Fischer-344 rats received the
+substance.</p>
 <p>The data is available in the goric package.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">library</span>(goric)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="kw">data</span>(vinylidene)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(vinylidene))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(goric)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">data</span>(vinylidene)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(vinylidene))</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -406,9 +408,11 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </div>
 <div id="estimating-marginal-dose-means" class="section level2">
 <h2>Estimating marginal dose means</h2>
-<p>The dose is a factor with 4 levels; hence, we can estimate the average response per dose level in a linear model, setting the intercept to 0.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>m &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">cbind</span>(SDH, SGOT, SGPT) <span class="op">~</span><span class="st"> </span><span class="dv">0</span> <span class="op">+</span><span class="st"> </span>dose, <span class="dt">data=</span>vinylidene)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">coefficients</span>(m))</span></code></pre></div>
+<p>The dose is a factor with 4 levels; hence, we can estimate the
+average response per dose level in a linear model, setting the intercept
+to 0.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">cbind</span>(SDH, SGOT, SGPT) <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> dose, <span class="at">data=</span>vinylidene)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">coefficients</span>(m))</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -445,14 +449,16 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </tr>
 </tbody>
 </table>
-<p>Instead of the function lm(), we can use the function orlm() of the package goric. As we don’t want to add constraints on the parameters, we set all elements in the constraint matrix to 0.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>unconstrained &lt;-<span class="st"> </span><span class="kw">orlm</span>(<span class="kw">cbind</span>(SDH, SGOT, SGPT) <span class="op">~</span><span class="st"> </span><span class="dv">0</span> <span class="op">+</span><span class="st"> </span>dose, </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>                      <span class="dt">data=</span>vinylidene,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>                      <span class="dt">constr=</span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow=</span><span class="dv">1</span>, <span class="dt">ncol=</span><span class="dv">12</span>), </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>                      <span class="dt">rhs=</span><span class="dv">0</span>, <span class="dt">nec=</span><span class="dv">0</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="co">#&gt; Warning in model.matrix.default(mt, mf, contrasts): non-list contrasts argument</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="co">#&gt; ignored</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">coefficients</span>(unconstrained))</span></code></pre></div>
+<p>Instead of the function lm(), we can use the function orlm() of the
+package goric. As we don’t want to add constraints on the parameters, we
+set all elements in the constraint matrix to 0.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>unconstrained <span class="ot">&lt;-</span> <span class="fu">orlm</span>(<span class="fu">cbind</span>(SDH, SGOT, SGPT) <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> dose, </span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>                      <span class="at">data=</span>vinylidene,</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>                      <span class="at">constr=</span><span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow=</span><span class="dv">1</span>, <span class="at">ncol=</span><span class="dv">12</span>), </span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>                      <span class="at">rhs=</span><span class="dv">0</span>, <span class="at">nec=</span><span class="dv">0</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; Warning in model.matrix.default(mt, mf, contrasts): non-list contrasts argument</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; ignored</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">coefficients</span>(unconstrained))</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -492,10 +498,17 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </div>
 <div id="monotone-order-of-serum-levels" class="section level2">
 <h2>Monotone order of serum levels</h2>
-<p>We can fit a second model, adding the order constraints on the model coefficients of monotone increasing serum means with increasing dose levels. The constraints are included with a constraint matrix that defines linear combinations of model coefficients; therefore, this matrix needs to have the same number of columns as there are coefficients in the model; the first four columns correspond to the first response, the following columns represent the second and third response.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>cmat &lt;-<span class="st"> </span><span class="kw">cbind</span>(<span class="op">-</span><span class="kw">diag</span>(<span class="dv">3</span>), <span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="kw">cbind</span>(<span class="dv">0</span>, <span class="kw">diag</span>(<span class="dv">3</span>))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>constr &lt;-<span class="st"> </span><span class="kw">kronecker</span>(<span class="kw">diag</span>(<span class="dv">3</span>), cmat)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>knitr<span class="op">::</span><span class="kw">kable</span>(constr)</span></code></pre></div>
+<p>We can fit a second model, adding the order constraints on the model
+coefficients of monotone increasing serum means with increasing dose
+levels. The constraints are included with a constraint matrix that
+defines linear combinations of model coefficients; therefore, this
+matrix needs to have the same number of columns as there are
+coefficients in the model; the first four columns correspond to the
+first response, the following columns represent the second and third
+response.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>cmat <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="sc">-</span><span class="fu">diag</span>(<span class="dv">3</span>), <span class="dv">0</span>) <span class="sc">+</span> <span class="fu">cbind</span>(<span class="dv">0</span>, <span class="fu">diag</span>(<span class="dv">3</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>constr <span class="ot">&lt;-</span> <span class="fu">kronecker</span>(<span class="fu">diag</span>(<span class="dv">3</span>), cmat)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(constr)</span></code></pre></div>
 <table>
 <tbody>
 <tr class="odd">
@@ -626,15 +639,21 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </tr>
 </tbody>
 </table>
-<p>The monotone increase is specified by constraining the difference between consecutive coefficients to be larger or equal than 0; hence, two additional arguments are needed: rhs defines the boundary of the inequality constraint space and nec denotes the number of inequality constraints, which can be either a number of rows or a logical vector, where TRUE defines an inequality constraint and FALSE an equality constraint.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>monotone &lt;-<span class="st"> </span><span class="kw">orlm</span>(<span class="kw">cbind</span>(SDH, SGOT, SGPT) <span class="op">~</span><span class="st"> </span>dose<span class="dv">-1</span>,</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>                 <span class="dt">data=</span>vinylidene,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>                 <span class="dt">constr=</span>constr, </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>                 <span class="dt">rhs=</span><span class="kw">rep</span>(<span class="dv">0</span>, <span class="kw">nrow</span>(constr)), </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>                 <span class="dt">nec=</span><span class="dv">0</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a><span class="co">#&gt; Warning in model.matrix.default(mt, mf, contrasts): non-list contrasts argument</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="co">#&gt; ignored</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">round</span>(<span class="kw">coefficients</span>(monotone), <span class="dv">2</span>))</span></code></pre></div>
+<p>The monotone increase is specified by constraining the difference
+between consecutive coefficients to be larger or equal than 0; hence,
+two additional arguments are needed: rhs defines the boundary of the
+inequality constraint space and nec denotes the number of inequality
+constraints, which can be either a number of rows or a logical vector,
+where TRUE defines an inequality constraint and FALSE an equality
+constraint.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>monotone <span class="ot">&lt;-</span> <span class="fu">orlm</span>(<span class="fu">cbind</span>(SDH, SGOT, SGPT) <span class="sc">~</span> dose<span class="dv">-1</span>,</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>                 <span class="at">data=</span>vinylidene,</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>                 <span class="at">constr=</span>constr, </span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>                 <span class="at">rhs=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">nrow</span>(constr)), </span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>                 <span class="at">nec=</span><span class="dv">0</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; Warning in model.matrix.default(mt, mf, contrasts): non-list contrasts argument</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; ignored</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">round</span>(<span class="fu">coefficients</span>(monotone), <span class="dv">2</span>))</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -671,19 +690,24 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </tr>
 </tbody>
 </table>
-<p>The comparison of the constrained with the unconstrained estimates demonstrate that there is one active constraint for SGOT, affecting the average serum estimates at dose levels 2 and 3, and for SGPT, enforcing a monotone order leads to the same estimate for all dose levels.</p>
+<p>The comparison of the constrained with the unconstrained estimates
+demonstrate that there is one active constraint for SGOT, affecting the
+average serum estimates at dose levels 2 and 3, and for SGPT, enforcing
+a monotone order leads to the same estimate for all dose levels.</p>
 </div>
 <div id="equality-constraints" class="section level2">
 <h2>Equality constraints</h2>
-<p>We can fit a third model under the assumption of no effect of the dose, changing all previous inequality constraints of the monotone order assumption into equality constraints.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>noeffect &lt;-<span class="st"> </span><span class="kw">orlm</span>(<span class="kw">cbind</span>(SDH, SGOT, SGPT) <span class="op">~</span><span class="st"> </span>dose<span class="dv">-1</span>,</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>                 <span class="dt">data=</span>vinylidene,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>                 <span class="dt">constr=</span>constr, </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>                 <span class="dt">rhs=</span><span class="kw">rep</span>(<span class="dv">0</span>, <span class="kw">nrow</span>(constr)), </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>                 <span class="dt">nec=</span><span class="kw">nrow</span>(constr))</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a><span class="co">#&gt; Warning in model.matrix.default(mt, mf, contrasts): non-list contrasts argument</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="co">#&gt; ignored</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">round</span>(<span class="kw">coefficients</span>(noeffect), <span class="dv">2</span>))</span></code></pre></div>
+<p>We can fit a third model under the assumption of no effect of the
+dose, changing all previous inequality constraints of the monotone order
+assumption into equality constraints.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>noeffect <span class="ot">&lt;-</span> <span class="fu">orlm</span>(<span class="fu">cbind</span>(SDH, SGOT, SGPT) <span class="sc">~</span> dose<span class="dv">-1</span>,</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>                 <span class="at">data=</span>vinylidene,</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>                 <span class="at">constr=</span>constr, </span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>                 <span class="at">rhs=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">nrow</span>(constr)), </span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>                 <span class="at">nec=</span><span class="fu">nrow</span>(constr))</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt; Warning in model.matrix.default(mt, mf, contrasts): non-list contrasts argument</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt; ignored</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">round</span>(<span class="fu">coefficients</span>(noeffect), <span class="dv">2</span>))</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -723,9 +747,14 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </div>
 <div id="the-generalised-order-restricted-information-criterion" class="section level2">
 <h2>The Generalised Order Restricted Information Criterion</h2>
-<p>The three different models can be compared by calculating information criteria with the function goric(), which also provides model weights for each model in the set. The penalty term of the information criterion includes a level probability, which is computed by Monte-Carlo simulation; therefore, the number of Monte-Carlo iterations has to be provided.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>ic &lt;-<span class="st"> </span><span class="kw">goric</span>(unconstrained, monotone, noeffect, <span class="dt">iter=</span><span class="dv">100000</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>knitr<span class="op">::</span><span class="kw">kable</span>(ic)</span></code></pre></div>
+<p>The three different models can be compared by calculating information
+criteria with the function goric(), which also provides model weights
+for each model in the set. The penalty term of the information criterion
+includes a level probability, which is computed by Monte-Carlo
+simulation; therefore, the number of Monte-Carlo iterations has to be
+provided.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>ic <span class="ot">&lt;-</span> <span class="fu">goric</span>(unconstrained, monotone, noeffect, <span class="at">iter=</span><span class="dv">100000</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(ic)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -747,8 +776,8 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <tr class="even">
 <td align="left">monotone</td>
 <td align="right">-399.5223</td>
-<td align="right">7.48429</td>
-<td align="right">814.0133</td>
+<td align="right">7.48284</td>
+<td align="right">814.0104</td>
 <td align="right">0.005</td>
 </tr>
 <tr class="odd">
@@ -760,14 +789,24 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </tr>
 </tbody>
 </table>
-<p>We obtain a very high weight for the unconstrained model, demonstrating that we cannot assume a monotone order of expected serum enzyme levels with increasing dosage for all of the three serums.</p>
+<p>We obtain a very high weight for the unconstrained model,
+demonstrating that we cannot assume a monotone order of expected serum
+enzyme levels with increasing dosage for all of the three serums.</p>
 </div>
 <div id="references" class="section level2">
 <h2>References</h2>
 <ul>
-<li><p>Kuiper R.M., Hoijtink H., Silvapulle M.J. (2011). An Akaike-type Information Criterion for Model Selection Under Inequality Constraints. <em>Biometrika</em>, <strong>98</strong>, 495-501.</p></li>
-<li><p>Kuiper R.M., Hoijtink H., Silvapulle M.J. (2012). Generalization of the Order-Restricted Information Criterion for Multivariate Normal Linear Models. <em>Journal of Statistical Planning and Inference</em>, <strong>142</strong>, 2454-2463.</p></li>
-<li><p>Kuiper R.M., Gerhard D., Hothorn L.A. (2014). Identification of the Minimum Effective Dose for Normally Distributed Endpoints Using a Model Selection Approach. <em>Statistics in Biopharmaceutical Research</em>, <strong>6</strong>(1), 55-66.</p></li>
+<li><p>Kuiper R.M., Hoijtink H., Silvapulle M.J. (2011). An Akaike-type
+Information Criterion for Model Selection Under Inequality Constraints.
+<em>Biometrika</em>, <strong>98</strong>, 495-501.</p></li>
+<li><p>Kuiper R.M., Hoijtink H., Silvapulle M.J. (2012). Generalization
+of the Order-Restricted Information Criterion for Multivariate Normal
+Linear Models. <em>Journal of Statistical Planning and Inference</em>,
+<strong>142</strong>, 2454-2463. <a href="doi:10.1016/j.jspi.2012.03.007" class="uri">doi:10.1016/j.jspi.2012.03.007</a>.</p></li>
+<li><p>Kuiper R.M., Gerhard D., Hothorn L.A. (2014). Identification of
+the Minimum Effective Dose for Normally Distributed Endpoints Using a
+Model Selection Approach. <em>Statistics in Biopharmaceutical
+Research</em>, <strong>6</strong>(1), 55-66. <a href="doi:10.1080/19466315.2013.847384" class="uri">doi:10.1080/19466315.2013.847384</a></p></li>
 </ul>
 </div>
 

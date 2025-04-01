@@ -12,9 +12,9 @@ orglsSet(formula, data, weights = NULL, correlation = NULL, set,
 
 \item{data}{an optional data frame, list or environment (or object coercible by as.data.frame to a data frame) containing the variables in the model. If not found in data, the variables are taken from environment(formula), typically the environment from which lm is called.}
 
-\item{weights}{a \code{\link{varClasses}} object; more details are provided on the help pages in R package \code{nlme}}
+\item{weights}{a \code{\link[nlme]{varClasses}} object; more details are provided on the help pages in R package \code{nlme}}
 
-\item{correlation}{a \code{\link{corClasses}} object; more details are provided on the help pages in R package \code{nlme}}
+\item{correlation}{a \code{\link[nlme]{corClasses}} object; more details are provided on the help pages in R package \code{nlme}}
 
 \item{set}{either a character string (see \code{\link{constrSet}}), or a list with slots for constr, rhs, and nec similarly defined as in \code{\link{orlm}}}
 

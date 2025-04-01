@@ -4,12 +4,12 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ---- vinylidene, warning=FALSE, message=FALSE--------------------------------
+## ----vinylidene, warning=FALSE, message=FALSE---------------------------------
 library(goric)
 data(vinylidene)
 knitr::kable(head(vinylidene))
 
-## ---- lm----------------------------------------------------------------------
+## ----lm-----------------------------------------------------------------------
 m <- lm(cbind(SDH, SGOT, SGPT) ~ 0 + dose, data=vinylidene)
 knitr::kable(coefficients(m))
 
